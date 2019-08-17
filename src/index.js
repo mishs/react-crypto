@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Header from './components/common/Header'
 
 const App = () => {
   return (
-    <h1>App Home Page</h1>
+    <div>
+      <Header />
+      <h1>App Home Page</h1>
+    </div>
   )
 }
 
