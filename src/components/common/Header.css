@@ -8,3 +8,9 @@
     height: 80px;
   }
   
+  .Header-logo {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    width: 90px;
+  }
