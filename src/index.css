@@ -32,4 +32,29 @@ body {
     font-weight: 300;
   }
   
- 
+  .percent-raised {
+    color: #3cd483;
+  }
+  
+  .percent-fallen {
+    color: #d64d96;
+  }
+  
+  .loading-container {
+    width: 100%;
+    text-align: center;
+    margin: 40px auto;
+  }
+  
+  .error {
+    width: 100%;
+    margin: 40px 0;
+    text-align: center;
+    color: #d64d96;
+  }
+  
+  /* Remove close icon from input on IE */
+  input::-ms-clear {
+    display: none;
+  }
+  
