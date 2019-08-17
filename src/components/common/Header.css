@@ -14,3 +14,10 @@
     left: 20px;
     width: 90px;
   }
+  
+  @media (max-width: 700px) {
+    .Header-logo {
+      display: none;
+    }
+  }
+  
