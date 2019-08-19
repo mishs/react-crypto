@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { handleResponse } from '../../helpers';
 
 class List extends React.Component {
     constructor() {
@@ -13,12 +14,10 @@ class List extends React.Component {
 
     componentDidMount() {
         this.setState({ loading: true });
+        //since will we use to the Root API url in a couple places- turn it a variable
         fetch('https://api.udilia.com/coins/v1/cryptocurrencies?page=1&perPage=20')
-            .then(response => {
-            return response.json().then(json => {
-                return response.ok ? json : Promise.reject(json);
-            });
-            })
+            // to avoid repetition since we will use fetch again- set as a helper function-> handleResponse
+            .then(handleResponse)
             .then((data) => {
             console.log('Success', data);
             //remember- the data.currencies below is specifying the map to exact data required from the data object in API
