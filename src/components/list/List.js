@@ -25,15 +25,11 @@ class List extends React.Component {
                 this.setState({ currency: data.currencies , loading: false});
             })
             .catch((error) => {
-                 //Qn- where is the second error, first in value in the API
-            this.setState({
-                 error: error.errorMessage, 
-                 loading: false });
+            console.log('Error', error);
             });
     }
 
     render() {
-        console.log(this.state);
         if(this.state.loading) {
             return <div>Loading ...</div>
         }
