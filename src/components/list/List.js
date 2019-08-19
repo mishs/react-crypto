@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { handleResponse } from '../../helpers';
+import { API_URL } from '../../config';
 
 class List extends React.Component {
     constructor() {
