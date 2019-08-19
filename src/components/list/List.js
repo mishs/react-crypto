@@ -29,7 +29,6 @@ class List extends React.Component {
             this.setState({
                  error: error.errorMessage, 
                  loading: false });
-            console.log('Error', error);
             });
     }
 
