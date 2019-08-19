@@ -12,6 +12,7 @@ class List extends React.Component {
     }
 
     componentDidMount() {
+        this.setState({ loading: true });
         fetch('https://api.udilia.com/coins/v1/cryptocurrencies?page=1&perPage=20')
             .then(response => {
             return response.json().then(json => {
@@ -20,13 +21,19 @@ class List extends React.Component {
             })
             .then((data) => {
             console.log('Success', data);
+            //remember- the data.currencies below is specifying the map to exact data required from the data object in API
+                this.setState({ currency: data.currencies , loading: false});
             })
             .catch((error) => {
-            console.log('Error', error);
+                 //Qn- where is the second error, first in value in the API
+            this.setState({
+                 error: error.errorMessage, 
+                 loading: false });
             });
     }
 
     render() {
+        console.log(this.state);
         if(this.state.loading) {
             return <div>Loading ...</div>
         }
