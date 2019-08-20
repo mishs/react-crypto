@@ -6,10 +6,11 @@ import logo from './logo.png'
 
 // demonstration of internal styling, 
    //key is in camelCase style convention as below
-   const containerStyle = {
-       //remember-  key is in camelCase
-        fontSize : '40px'
-}
+  
+//    const containerStyle = {
+//        //remember-  key is in camelCase
+//         fontSize : '40px'
+// }
 
 const Header = () => {
     return (
