@@ -55,7 +55,12 @@ class List extends React.Component {
                      {this.state.currencies.map((currency) => 
                         <tr key={currency.id}>
                          <td>
+                             {/* this specific details, ie. table rank and name are from API. */}
                              <span className="Table-rank">{currency.rank}</span>
+                             {currency.name}
+                         </td>
+                         <td>
+                             <span className="Table-dollar">$ {currency.price}</span>
                          </td>
                         
                         </tr>
