@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { handleResponse } from '../../helpers';
 import { API_URL } from '../../config';
 
@@ -8,7 +7,7 @@ class List extends React.Component {
         super();
         this.state = {
             loading: false,
-            currency: [],
+            currencies: [],
             error: null
         }
     }
@@ -22,7 +21,7 @@ class List extends React.Component {
             .then((data) => {
             console.log('Success', data);
             //remember- the data.currencies below is specifying the map to exact data required from the data object in API
-                this.setState({ currency: data.currencies , loading: false});
+                this.setState({ currencies: data.currencies , loading: false});
             })
             .catch((error) => {
                  //Qn- where is the second error, first in value in the API
@@ -33,13 +32,19 @@ class List extends React.Component {
     }
 
     render() {
+        //this.state represents the whole initial state, just now updated
         console.log(this.state);
         if(this.state.loading) {
             return <div>Loading ...</div>
         }
+
         return (
-            <div>List Text</div>
-        )
+            <div>
+               {this.state.currencies.map((currency) => 
+               <div key={currency.id}>{currency.id}</div>
+                )}
+            </div>
+        );
     }
 }
 
