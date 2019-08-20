@@ -45,6 +45,18 @@ class List extends React.Component {
                {this.state.currencies.map((currency) => 
                <div key={currency.id}>{currency.id}</div>
                 )}
+                <table className="Table">
+                    <thead className="Table-head">
+                       <tr>
+                        <th>Cyptocurrency</th>
+                        <th>Price</th>
+                        <th>Market Cap</th>
+                        <th>24H Change</th>
+                        </tr> 
+                    </thead>
+                    <tbody></tbody>
+
+                </table>
             </div>
         );
     }
