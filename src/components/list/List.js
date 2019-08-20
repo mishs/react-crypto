@@ -32,6 +32,17 @@ class List extends React.Component {
             });
     }
 
+    //method to show arrow sign that's in accordance
+    renderChangePercent(percent) {
+        if(percent > 0) {
+            return <span className="perecent-raised">{percent}% &uarr; </span>
+        }else if (perent < 0) { 
+            return <span className="percent-fallen">{percent}% &darr;</span>
+        }else {
+            return <span>{percent}</span>
+        }
+    }
+
     render() {
         //this.state represents the whole initial state, just now updated
         // console.log(this.state);
@@ -61,6 +72,9 @@ class List extends React.Component {
                          </td>
                          <td>
                              <span className="Table-dollar">$ {currency.price}</span>
+                         </td>
+                         <td>
+                             <span className="Table-dollar">$ {currency.marketCap}</span>
                          </td>
                         
                         </tr>
