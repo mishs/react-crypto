@@ -36,7 +36,7 @@ class List extends React.Component {
     renderChangePercent(percent) {
         if(percent > 0) {
             return <span className="perecent-raised">{percent}% &uarr; </span>
-        }else if (perent < 0) { 
+        }else if (percent < 0) { 
             return <span className="percent-fallen">{percent}% &darr;</span>
         }else {
             return <span>{percent}</span>
@@ -75,6 +75,9 @@ class List extends React.Component {
                          </td>
                          <td>
                              <span className="Table-dollar">$ {currency.marketCap}</span>
+                         </td>
+                         <td>
+                             {this.renderChangePercent(currency.percentChange24h)}
                          </td>
                         
                         </tr>
