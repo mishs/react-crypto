@@ -42,9 +42,6 @@ class List extends React.Component {
 
         return (
             <div className="Table-container">
-               {this.state.currencies.map((currency) => 
-               <div key={currency.id}>{currency.id}</div>
-                )}
                 <table className="Table">
                     <thead className="Table-head">
                        <tr>
@@ -54,8 +51,11 @@ class List extends React.Component {
                         <th>24H Change</th>
                         </tr> 
                     </thead>
-                    <tbody></tbody>
-
+                    <tbody className="Table-body">
+                     {this.state.currencies.map((currency) => 
+                        <div key={currency.id}>{currency.id}</div>
+                     )}
+                    </tbody>
                 </table>
             </div>
         );
