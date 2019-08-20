@@ -1,6 +1,7 @@
 import React from 'react'
 import { handleResponse } from '../../helpers';
 import { API_URL } from '../../config';
+import './Table.css'
 
 class List extends React.Component {
     constructor() {
@@ -33,7 +34,8 @@ class List extends React.Component {
 
     render() {
         //this.state represents the whole initial state, just now updated
-        console.log(this.state);
+        // console.log(this.state);
+        
         if(this.state.loading) {
             return <div>Loading ...</div>
         }
