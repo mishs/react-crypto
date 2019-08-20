@@ -35,13 +35,13 @@ class List extends React.Component {
     render() {
         //this.state represents the whole initial state, just now updated
         // console.log(this.state);
-        
+
         if(this.state.loading) {
             return <div>Loading ...</div>
         }
 
         return (
-            <div>
+            <div className="Table-container">
                {this.state.currencies.map((currency) => 
                <div key={currency.id}>{currency.id}</div>
                 )}
