@@ -44,16 +44,21 @@ class List extends React.Component {
             <div className="Table-container">
                 <table className="Table">
                     <thead className="Table-head">
-                       <tr>
-                        <th>Cyptocurrency</th>
-                        <th>Price</th>
-                        <th>Market Cap</th>
-                        <th>24H Change</th>
+                        <tr>
+                            <th>Cyptocurrency</th>
+                            <th>Price</th>
+                            <th>Market Cap</th>
+                            <th>24H Change</th>
                         </tr> 
                     </thead>
                     <tbody className="Table-body">
                      {this.state.currencies.map((currency) => 
-                        <div key={currency.id}>{currency.id}</div>
+                        <tr key={currency.id}>
+                         <td>
+                             <span className="Table-rank">{currency.rank}</span>
+                         </td>
+                        
+                        </tr>
                      )}
                     </tbody>
                 </table>
