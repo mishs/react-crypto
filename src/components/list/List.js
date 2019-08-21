@@ -49,8 +49,14 @@ class List extends React.Component {
         //this.state represents the whole initial state, just now updated
         // console.log(this.state);
 
+        //render loading component only if loading is set to true
         if(this.state.loading) {
             return <div className="loading-container"><Loading /></div>
+        }
+
+        //render error message if error occurs while fetching data
+        if(this.state.error) {
+          return <div className="error">{this.state.error}</div>
         }
 
         return (
