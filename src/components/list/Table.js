@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Table.css';
 
 const Table = (props) => {
@@ -40,6 +41,12 @@ const Table = (props) => {
                 </table>
             </div>
  )
+}
+
+Table.propTypes = {
+    currencies: PropTypes.array.isRequired,
+    renderChangePercent: PropTypes.func.isRequired
+    // for full list of prop-types checking, go to react documentation 'Typechecking with proptypes'
 }
 
 export default Table;
