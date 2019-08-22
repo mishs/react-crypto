@@ -1,7 +1,7 @@
 import React from 'react'
 import './Table.css';
 
-const Table = () => {
+const Table = (props) => {
  return (
 <div className="Table-container">
                 <table className="Table">
@@ -14,7 +14,7 @@ const Table = () => {
                         </tr> 
                     </thead>
                     <tbody className="Table-body">
-                     {currencies.map((currency) => 
+                     {props.currencies.map((currency) =>
                         <tr key={currency.id}>
                          <td>
                              {/* this specific details, ie. table rank and name are from API. */}
@@ -30,7 +30,7 @@ const Table = () => {
                              {currency.marketCap}
                          </td>
                          <td>
-                             {this.renderChangePercent(currency.percentChange24h)}
+                             {props.renderChangePercent(currency.percentChange24h)}
                          </td>
                         
                         </tr>
