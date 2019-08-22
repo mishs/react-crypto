@@ -81,14 +81,12 @@ class List extends React.Component {
                              {currency.name}
                          </td>
                          <td>
-                             <span className="Table-dollar">$
-                             {currency.price} 
-                             </span>
+                             <span className="Table-dollar">$</span>
+                             {currency.price}
                          </td>
                          <td>
-                             <span className="Table-dollar">$
+                             <span className="Table-dollar">$</span>
                              {currency.marketCap}
-                             </span>
                          </td>
                          <td>
                              {this.renderChangePercent(currency.percentChange24h)}
