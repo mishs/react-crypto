@@ -46,7 +46,7 @@ const Table = (props) => {
 Table.propTypes = {
     currencies: PropTypes.array.isRequired,
     renderChangePercent: PropTypes.func.isRequired
-    // for full list of prop-types checking, go to react documentation 'Typechecking with proptypes'
+    // for full list of prop-types checking, go to react documentation 'Typechecking wqith proptypes'
 }
 
 export default Table;
