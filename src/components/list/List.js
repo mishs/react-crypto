@@ -11,8 +11,10 @@ class List extends React.Component {
         this.state = {
             loading: false,
             currencies: [],
-            error: null
-        }
+            error: null,
+            totalPages: 0,
+            page: 1,
+        };
     }
 
     componentDidMount() {
