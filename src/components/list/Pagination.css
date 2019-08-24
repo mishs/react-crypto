@@ -24,3 +24,7 @@
     outline: none;
   }
   
+.Pagination-button:disabled {
+    background-color: #1f364d;
+    cursor: not-allowed;
+  }
