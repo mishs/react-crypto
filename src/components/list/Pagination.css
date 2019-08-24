@@ -28,3 +28,8 @@
     background-color: #1f364d;
     cursor: not-allowed;
   }
+  
+  .Pagination-info {
+    font-size: 12px;
+  }
+  
