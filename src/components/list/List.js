@@ -50,7 +50,7 @@ class List extends React.Component {
     }
 
     render() {
-        const { loading, error, currencies } = this.state;
+        const { loading, error, currencies, page, totalPages } = this.state;
 
         //this.state represents the whole initial state, just now updated
         // console.log(this.state);
@@ -71,7 +71,10 @@ class List extends React.Component {
                 currencies={currencies}
                 renderChangePercent={this.renderChangePercent}
                 />
-                <Pagination />
+                <Pagination
+                    page={page}
+                    totalPages={totalPages}
+                 />
             </div>
         );
     }
