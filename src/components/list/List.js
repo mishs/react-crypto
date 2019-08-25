@@ -32,9 +32,9 @@ class List extends React.Component {
         
             //remember- the data.currencies below is specifying the map to exact data required from the data object in API
                 this.setState({ 
-                    currencies: currencies,
-                    totalPages: totalPages,
-                    loading: false
+                    currencies,
+                    totalPages,
+                    loading: false,
                 });
             })
             .catch((error) => {
