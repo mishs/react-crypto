@@ -93,6 +93,7 @@ class List extends React.Component {
                 <Pagination
                     page={page}
                     totalPages={totalPages}
+                    handlePaginationClick={this.handlePaginationClick}
                  />
             </div>
         );
