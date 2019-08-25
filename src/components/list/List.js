@@ -16,6 +16,8 @@ class List extends React.Component {
             totalPages: 0,
             page: 1,
         };
+        //to handle usage of all functions wanting to use this keyword
+        this.handlePaginationClick = this.handlePaginationClick.bind(this);
     }
 
     componentDidMount() {
@@ -56,7 +58,7 @@ class List extends React.Component {
         }
     }
 
-    handlePaginationClick = (direction) => {
+    handlePaginationClick(direction) {
         let nextPage = this.state.page;
 //increment to nextPage if direction variable is next, otherwise decrement
         nextPage = direction === 'next' ? nextPage +1 : nextPage -1;
