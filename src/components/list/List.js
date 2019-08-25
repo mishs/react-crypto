@@ -21,30 +21,37 @@ class List extends React.Component {
     }
 
     componentDidMount() {
+       this.fetchCurrencies();
+    }
+
+    //to enable loading corresponding currencies together with the page selected
+    fetchCurrencies() {
         this.setState({ loading: true });
 
-            const { page } = this.state
-        //since will we use to the Root API url in a couple places- turn it a variable
-        fetch(`${API_URL}/cryptocurrencies?page=${page}&perPage=20`)
-            // to avoid repetition since we will use fetch again- set as a helper function-> handleResponse
-            .then(handleResponse)
-            .then((data) => {
-            console.log('Success', data);
-            const { currencies, totalPages } = data;
-        
-            //remember- the data.currencies below is specifying the map to exact data required from the data object in API
-                this.setState({ 
-                    currencies,
-                    totalPages,
-                    loading: false,
-                });
-            })
-            .catch((error) => {
-                 //Qn- where is the second error, first in value in the API
-            this.setState({
-                 error: error.errorMessage, 
-                 loading: false });
+        const { page } = this.state
+    //since will we use to the Root API url in a couple places- turn it a variable
+    fetch(`${API_URL}/cryptocurrencies?page=${page}&perPage=20`)
+        // to avoid repetition since we will use fetch again- set as a helper function-> handleResponse
+        .then(handleResponse)
+        .then((data) => {
+        console.log('Success', data);
+        const { currencies, totalPages } = data;
+    
+        //remember- the data.currencies below is specifying the map to exact data required from the data object in API
+            this.setState({ 
+                currencies,
+                totalPages,
+                loading: false,
             });
+        })
+        .catch((error) => {
+             //Qn- where is the second error, first in value in the API
+        this.setState({
+             error: error.errorMessage, 
+             loading: false 
+            });
+        });
+
     }
 
     //method to show arrow sign that's in accordance
