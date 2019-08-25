@@ -20,6 +20,7 @@ class List extends React.Component {
 
     componentDidMount() {
         this.setState({ loading: true });
+
             const { page } = this.state
         //since will we use to the Root API url in a couple places- turn it a variable
         fetch(`${API_URL}/cryptocurrencies?page=${page}&perPage=20`)
@@ -27,8 +28,14 @@ class List extends React.Component {
             .then(handleResponse)
             .then((data) => {
             console.log('Success', data);
+            const { currencies, totalPages } = data;
+        
             //remember- the data.currencies below is specifying the map to exact data required from the data object in API
-                this.setState({ currencies: data.currencies , loading: false});
+                this.setState({ 
+                    currencies: currencies,
+                    totalPages: totalPages,
+                    loading: false
+                });
             })
             .catch((error) => {
                  //Qn- where is the second error, first in value in the API
