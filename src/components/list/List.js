@@ -20,6 +20,7 @@ class List extends React.Component {
         this.handlePaginationClick = this.handlePaginationClick.bind(this);
     }
 
+
     componentDidMount() {
        this.fetchCurrencies();
     }
@@ -74,7 +75,11 @@ class List extends React.Component {
         // }else {
         //     nextPage--;
         // }
-        this.setState({ page: nextPage });
+        this.setState({ page: nextPage }, () => {
+            //call fetchCurrencies function inside setState's callback
+            //because we have to make sure first page state is update
+            this.fetchCurrencies();
+        });
     }
 
     render() {
