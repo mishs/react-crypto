@@ -16,7 +16,7 @@ const Pagination = (props) => {
      <button 
      className="Pagination-button"
      onClick={handlePaginationClick.bind(this, 'next')}
-     disabled={age >= totalPages}
+     disabled={page >= totalPages}
      >
          &rarr;
      </button>
