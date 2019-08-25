@@ -26,7 +26,8 @@ const Pagination = (props) => {
 
 Pagination.propTypes = {
     page: propTypes.number.isRequired,
-
+    totalPages: Proptypes.number.isRequired,
+    handlePaginationClick: Proptypes.func.isRequired,
 }
 
 export default Pagination;
