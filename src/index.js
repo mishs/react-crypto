@@ -12,7 +12,10 @@ const App = () => {
         <div>
     {/* Header outside Switch that iterates because we want it on every page of the components  */}
           <Header />
-
+          <Switch>
+   {/* visit console to test content of Switch when url is to an non-existant page. The switch shows empty, unlike with / (home url)  */}
+              <Route path='/' component={List} exact />
+          </Switch>
       </div>
       </BrowserRouter>
   )
