@@ -20,6 +20,9 @@
     the .2 is to transform the border in a duration of 2 seconds. If it was (transition: width 2s) it would be transitioning width in 2seconds */
     transition: border .2s;
   }
-
+  
+  .NotFound-link:hover {
+    border: 1px solid #fff;
+  }
 
   
