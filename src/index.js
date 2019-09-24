@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/common/Header'
+import NotFound from './components/notfound/NotFound'
 import './index.css'
 import List from './components/list/List'
 
@@ -15,6 +16,7 @@ const App = () => {
           <Switch>
    {/* visit console to test content of Switch when url is to an non-existant page. The switch shows empty, unlike with / (home url)  */}
               <Route path='/' component={List} exact />
+              <Route component={NotFound} />
           </Switch>
       </div>
       </BrowserRouter>
